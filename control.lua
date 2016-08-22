@@ -15,21 +15,13 @@ function toidle(player)
   player.state = "control"
 end
 
---changes to idle animation after release of walk control
-function walkrelease(player, dir)
-  toidle(player)
-  if dir == "d" or dir == "right" then
-    player.char.flip_h = 1
-  elseif dir == "a" or dir == "left" then
-    player1.char.flip_h = -1
-  end
-end
-
 --changes to basic attack animation
-function basic(player)
-  player.char.curr_anim = player.char.sprite["animation_names"][3]
-  player.char.curr_frame = 1
-  player.state = "nocontrol"
+function basic(key, player)
+  if key == player.attack and player.state == "control" then
+    player.char.curr_anim = player.char.sprite["animation_names"][3]
+    player.char.curr_frame = 1
+    player.state = "nocontrol"
+  end
 end
 
 --change to hurt animation and no control if a player is hit
@@ -60,25 +52,23 @@ function collisions(player,scdplayer)
       scdplayer.state = "nocontrol"
 
       if #counter == 1 then   --only removes specified damage once per attack as counter is cleared at end of animation
-        scdplayer.char.sprite.health = scdplayer.char.sprite.health - player.char.sprite.basic_dmg
+        player.char.sprite.dmg_sound:play()
+        scdplayer.char.sprite.health = scdplayer.char.sprite.health - (100/scdplayer.char.sprite.max_health)*player.char.sprite.basic_dmg
       end
 
+      if scdplayer.char.sprite.health <= 0 then
+        scdplayer.state = "dead"
+        for k in pairs(counter) do
+          counter[k] = nil end
+      end
     end
   end
 end
 
 --walking and checking for collisions and returning to idle
 function allupdates(player, scdplayer, dt)
-  if player == player1 then
-    RIGHT = "d"
-    LEFT = "a"
-  elseif player == player2 then
-    RIGHT = "right"
-    LEFT = "left"
-  end
-
   if player.state == "control" then
-    if love.keyboard.isDown(RIGHT) then
+    if love.keyboard.isDown(player.right) then
       player.char.curr_anim = player.char.sprite["animation_names"][2]
       player.char.flip_h = 1
       if player.x < (windowwidth/3 - 16) then
@@ -86,7 +76,7 @@ function allupdates(player, scdplayer, dt)
       end
     end
 
-    if love.keyboard.isDown(LEFT) then
+    if love.keyboard.isDown(player.left) then
       player.char.curr_anim = player.char.sprite["animation_names"][2]
       player.char.flip_h = -1
       if player.x > 16 then
@@ -101,11 +91,10 @@ function allupdates(player, scdplayer, dt)
   if player.char.curr_anim == player.char.sprite["animation_names"][3] and player.char.curr_frame == #player.char.sprite["animations"][player.char.curr_anim] then
     toidle(player) end
 
-  if scdplayer.char.curr_anim == scdplayer.char.sprite["animation_names"][4] and scdplayer.char.curr_frame == #scdplayer.char.sprite["animations"][scdplayer.char.curr_anim] then
-    toidle(scdplayer)
+  if scdplayer.char.curr_anim == scdplayer.char.sprite["animation_names"][4] and scdplayer.char.curr_frame == 4 then --#scdplayer.char.sprite["animations"][scdplayer.char.curr_anim]
     for k in pairs(counter) do
-      counter[k] = nil
-    end
+      counter[k] = nil end
+    toidle(scdplayer)
   end
 
   --ensure player can always control if in idle state

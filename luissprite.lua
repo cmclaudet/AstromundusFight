@@ -3,6 +3,9 @@
 luissprite = {}
 
 local SourceImage = love.graphics.newImage("assets/luisspritesheet.png")  --get sprite sheet
+SourceImage:setFilter( 'nearest', 'nearest' )    --Scales image so that pixels are sharp
+
+local kicksound = love.audio.newSource("assets/sound/Kick.wav","static")
 
 local image_w = SourceImage:getWidth()
 local image_h = SourceImage:getHeight()
@@ -55,6 +58,8 @@ return {
     }
   },
 
+  icon = love.graphics.newQuad(10,33,12,15,image_w,image_h),
+
   --character hurt box, defines top left corner with width and height
   hurt_box = {
     dx = -5,    --x offset from player x coord
@@ -72,11 +77,13 @@ return {
     h = 5
   },
 
-  health = 75,
-  max_health = 75,
+  health = 100,
+  max_health = 80,
 
-  basic_dmg = 5,
-  height = 32
+  basic_dmg = 6,
+  height = 32,
+
+  dmg_sound = kicksound
 }
 end
 return luissprite

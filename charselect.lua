@@ -1,0 +1,20 @@
+windowwidth = love.graphics.getWidth()
+windowheight = love.graphics.getHeight()
+font3 = love.graphics.newFont("assets/ARCADECLASSIC.TTF",25)
+love.graphics.setFont(font3)
+
+love.graphics.setColor(255,255,0)
+love.graphics.printf("CHOOSE YOUR CHARACTER", windowwidth/6-125, 5, 250, "center")
+love.graphics.printf("PRESS ENTER TO PLAY", windowwidth/6-125, 170, 250, "center")
+
+love.graphics.setColor(255,0,0,150)
+love.graphics.rectangle("fill",25,35,60,120,10,10)
+love.graphics.rectangle("fill",93,35,27,27,3,3)
+love.graphics.rectangle("fill",93,66,27,27,3,3)
+love.graphics.rectangle("fill",93,97,27,27,3,3)
+
+love.graphics.setColor(0,0,255,150)
+love.graphics.rectangle("fill",171,35,60,120,10,10)
+love.graphics.rectangle("fill",135,35,27,27,3,3)
+love.graphics.rectangle("fill",135,66,27,27,3,3)
+love.graphics.rectangle("fill",135,97,27,27,3,3)

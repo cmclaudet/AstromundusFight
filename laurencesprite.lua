@@ -3,6 +3,9 @@
 laurencesprite = {}
 
 local SourceImage = love.graphics.newImage("assets/laurencespritesheet.png")
+SourceImage:setFilter( 'nearest', 'nearest' )    --Scales image so that pixels are sharp
+
+local headbuttsound = love.audio.newSource("assets/sound/HeadButt.wav","static")
 
 local image_w = SourceImage:getWidth()
 local image_h = SourceImage:getHeight()
@@ -55,6 +58,8 @@ return {
     }
   },
 
+  icon = love.graphics.newQuad(9,44,13,14,image_w,image_h),
+
   hurt_box = {
     dx = -6,
     dy = 5,
@@ -70,11 +75,13 @@ return {
     h = 10
   },
 
-  health = 75,
-  max_health = 75,
+  health = 100,
+  max_health = 100,
 
-  basic_dmg = 7,
-  height = 40
+  basic_dmg = 5,
+  height = 40,
+
+  dmg_sound = headbuttsound
 }
 end
 return laurencesprite
