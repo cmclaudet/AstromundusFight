@@ -46,6 +46,8 @@ function love.load()
 
     playmusic = love.audio.newSource("assets/sound/ChibiNinja.mp3")
     overmusic = love.audio.newSource("assets/sound/HerosDayOff.mp3")
+    playmusic:setLooping(true)
+    overmusic:setLooping(true)
     startsound = love.audio.newSource("assets/sound/Start.wav","static")
 
     --healthbar positions and dimensions
@@ -60,17 +62,17 @@ end
 
 --check if player attacks or changes game state
 function love.keypressed(key)
-  if key == "space" and gamestate == "title" then
-    startsound:play()
-    gamestate = "controls"
+  if gamestate == "title" then
+    if key == "space" then
+      startsound:play()
+      gamestate = "controls" end
+    if key == "return" then
+      startsound:play()
+      gamestate = "charselect" end
   end
   if key == "backspace" and gamestate == "controls" then
     startsound:play()
     gamestate = "title"
-  end
-  if key == "return" and gamestate == "title" then
-    startsound:play()
-    gamestate = "charselect"
   end
   if gamestate == "charselect" then
     --function handles choosing character mechanic
@@ -81,6 +83,10 @@ function love.keypressed(key)
       startsound:play()
       play(player1,player2)
       gamestate = "play"
+    end
+    if key == "backspace" then
+      startsound:play()
+      gamestate = "title"
     end
   end
   --can restart game
