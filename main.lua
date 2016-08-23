@@ -1,10 +1,11 @@
 require "forthesprites" --Include sprite handling
 require "control"       --Include control functions
 require "gamestates"    --Include gamestate functions
-local luissprite = require("luissprite")  --Include sprite data
-local laurencesprite = require("laurencesprite")
-local tadejasprite = require("tadejasprite")
-local catsprite = require("catsprite")
+require "instruction"   --Include instructions on how to control character
+local luissprite = require("sprites.luissprite")  --Include sprite data
+local laurencesprite = require("sprites.laurencesprite")
+local tadejasprite = require("sprites.tadejasprite")
+local catsprite = require("sprites.catsprite")
 local player = require("player")
 local gamestate = "title"    --Game state
 local scale = 3         --image size scale factor
@@ -22,6 +23,8 @@ windowheight = love.graphics.getHeight()
 
 --load all images and define player1 and player2
 function love.load()
+    love.window.setTitle( "Astromundus Fight" )
+
     --defining characters for both player 1 and 2. Need separate characters in case both players pick the same character
     luis1 = GetInstance (luissprite.info())
     luis2 = GetInstance (luissprite.info())
@@ -57,6 +60,14 @@ end
 
 --check if player attacks or changes game state
 function love.keypressed(key)
+  if key == "space" and gamestate == "title" then
+    startsound:play()
+    gamestate = "controls"
+  end
+  if key == "backspace" and gamestate == "controls" then
+    startsound:play()
+    gamestate = "title"
+  end
   if key == "return" and gamestate == "title" then
     startsound:play()
     gamestate = "charselect"
@@ -137,6 +148,9 @@ function drawUI(player1,player2)
   love.graphics.setColor(255,255,0)
   love.graphics.print("PLAYER 1",10,15)
   love.graphics.print("PLAYER 2",(windowwidth/3-50),15)
+  love.graphics.print(player1.char.sprite.sprite_name,10,32)
+  p2name_w = font1:getWidth(player2.char.sprite.sprite_name)
+  love.graphics.print(player2.char.sprite.sprite_name,(windowwidth/3-10-p2name_w),32)
 end
 
 --draws characters, health bars and background
@@ -175,6 +189,10 @@ function love.draw()
     overmusic:stop()
     playmusic:play()
     title(player1,player2)
+  end
+
+  if gamestate == "controls" then
+    controls()
   end
 
   if gamestate == "charselect" then

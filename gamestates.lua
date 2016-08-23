@@ -22,7 +22,8 @@ local starty = 180      --y-coord
 function title(player1,player2)
   love.graphics.draw(titleimg,windowwidth/6-titleimg:getWidth()/2, 25)
   love.graphics.setFont(font1)
-  love.graphics.printf("Press ENTER to play", windowwidth/6-125, windowheight/6+30, 250, "center")
+  love.graphics.printf("Press ENTER to play", windowwidth/6-125, windowheight/6+20, 250, "center")
+  love.graphics.printf("Press SPACE for controls", windowwidth/6-125, windowheight/6+40, 250, "center")
 end
 
 --fight is over, allow player to start a new game

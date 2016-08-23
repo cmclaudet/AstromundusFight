@@ -15,15 +15,26 @@ LEFT: a
 
 RIGHT: d
 
+UP: w
+
+DOWN: s
+
 BASIC ATTACK: e
 
+CANCEL: q
 
 Player 2
 
-LEFT: left
+LEFT: l
 
-RIGHT: right
+RIGHT: j
 
-BASIC ATTACK: PgUp
+UP: i
+
+DOWN: k
+
+BASIC ATTACK: u
+
+CANCEL: o
 
 QUIT: Esc

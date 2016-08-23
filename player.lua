@@ -30,12 +30,12 @@ return {
   speed = char_speed,
   state = "notready",
   char = character,
-  right = 'right',
-  left = 'left',
-  attack = 'pageup',
-  up = 'up',
-  down = 'down',
-  cancel = 'pagedown',
+  right = 'l',
+  left = 'j',
+  attack = 'u',
+  up = 'i',
+  down = 'k',
+  cancel = 'o',
   cursor = {movedown = true, moveup = false, confirmed = "no", y = 35, alpha = 150}
 }
 end
