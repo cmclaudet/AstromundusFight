@@ -21,7 +21,7 @@
 
    font-family: 'arcadeClassic', Fallback, sans-serif;
    color: rgb(255, 255, 255);
-   background-color: rgba(0, 0, 0, 0.2);
+   background-color: rgba(0, 0, 0, 0.25);
 }
 /* ============================== */
 /*            general             */
@@ -62,13 +62,36 @@ p{
 /* ============================== */
 /*             html               */
 /* ============================== */
+@media (max-width: 1920px) {
+   html{
+      background: url(../assets/background@1x.png) center center no-repeat fixed;
+   }
+}
+
+@media (min-width: 1921px){
+   html{
+      background: url(../assets/background@2x.png) center center no-repeat fixed;
+   }
+}
+
+@media (min-width: 3841px){
+   html{
+      background: url(../assets/background@3x.png) center center no-repeat fixed;
+   }
+}
+
 html{
    width: 100%;
    height: 100%;
 
-   font-size: 12pt;
    overflow-y: hidden;
+
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
 }
+
 /* ============================== */
 /*             header             */
 /* ============================== */
@@ -82,12 +105,6 @@ html{
 /* ============================== */
 
 body{
-   /*background: url(../assets/background.png) center center no-repeat fixed;*/
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
-
    text-align: center;
 
    width: 100%;
@@ -98,7 +115,7 @@ body{
 .areaTop{
    text-align: center;
 
-   margin: 1% 1% 0.5% 1%;
+   margin: 0 1% 0.5% 1%;
 }
 .areaBottom{
    text-align: center;
@@ -173,15 +190,17 @@ body{
 /*             footer             */
 /* ------------------------------ */
 footer{
+   /*
    position: static;
    bottom: 0;
 
-   /*padding-top: 10%;*/
+   padding-top: 10%;
    height: 15%;
    margin: 1% auto 0 auto;
 
    text-align:center;
    overflow-y: hidden;
+   */
 }
 .slider{
    display: inline-block;
