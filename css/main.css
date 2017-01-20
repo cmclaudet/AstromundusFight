@@ -1,295 +1,329 @@
-/* ============================== */
-/*     Custom Definitions         */
-/* ============================== */
+/* ==================================================================================== */
+/*                                       CUSTOM                                         */
+/* ==================================================================================== */
 @font-face {
-  font-family: 'arcadeClassic';
-  src:
-     url('../assets/arcadeClassic.eot?') format('eot'),
-     url('../assets/arcadeClassic.woff') format('woff'),
-     url('../assets/arcadeClassic.ttf') format('truetype');
+    font-family: 'arcadeClassic';
+    src:
+    url('../assets/arcadeClassic.eot?') format('eot'),
+    url('../assets/arcadeClassic.woff') format('woff'),
+    url('../assets/arcadeClassic.ttf') format('truetype');
 }
-/* ============================== */
-/*            Reset               */
-/* ============================== */
+/* ==================================================================================== */
+/*                                        RESET                                         */
+/* ==================================================================================== */
 * {
-   padding: 0;
-   margin: 0;
+    padding: 0;
+    margin: 0;
 
-   -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-         box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 
-   font-family: 'arcadeClassic', Fallback, sans-serif;
-   color: rgb(255, 255, 255);
-   background-color: rgba(0, 0, 0, 0.25);
+    font-family: 'arcadeClassic', Fallback, sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.25);
 }
-/* ============================== */
-/*            general             */
-/* ============================== */
+/* ==================================================================================== */
+/*                                       GENERAL                                        */
+/* ==================================================================================== */
 h1{
-   font-size: 2.5vw;
-   text-shadow: 0 3px 2px rgb(230, 90, 40);
-   color: rgb(255, 235, 40);
+    font-size: 2em;
+    text-shadow: 0 3px 2px rgb(230, 90, 40);
+    color: rgb(255, 235, 40);
 }
 h2{
-   font-size: 1.5vw;
-   color: rgb(255, 235, 40);
+    font-size: 1.5em;
+    color: rgb(255, 235, 40);
 }
 p{
-   color: rgb(255, 255, 255);
-   text-align: justify;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+    text-align: justify;
 }
 .button{
-   position: relative;
-   display: inline-block;
+    position: relative;
+    display: inline-block;
 
-   width: 6vw;
-   height: 6vw;
-   margin: 5% 5% 5% 5%;
-   background-color: rgb(255, 0, 0);
-   border: 5px solid rgb(255, 0, 0);
-   border-radius: 10px;
+    width: 16%;
+    margin: 0 5% 0 5%;
 
-   color: rgb(255, 255, 255);
-   line-height: 5vw;
-   text-decoration: none;
-   text-align: center;
-   font-size: 1.5vw;
+    background-color: rgb(255, 0, 0);
+    border: 5px solid rgb(255, 0, 0);
+    border-radius: 25%;
+}
+.button:after{
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+.buttonContent{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+
+    height: 100%;
+    width: 100%;
+
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-align: center;
+    font-size: 70%;
 }
 .button:hover{
-   border: 5px solid rgb(225, 225, 225);
+    border: 5px solid rgb(225, 225, 225);
 }
-/* ============================== */
-/*             html               */
-/* ============================== */
+@media (min-width: 900px){
+    h1{font-size: 2em;}
+    h2{font-size: 1.5em;}
+    p{font-size: 1em;}
+    .buttonContent{font-size: 1em;}
+}
+@media (min-width: 1200px){
+    h1{font-size: 4em;}
+    h2{font-size: 3em;}
+    p{font-size: 2em;}
+    .buttonContent{font-size: 1.5em;}
+}
+@media (min-width: 1600px){
+    h1{font-size: 6em;}
+    h2{font-size: 4.5em;}
+    p{font-size: 3em;}
+    .buttonContent{font-size: 2em;}
+}
+/* ==================================================================================== */
+/*                                       CUSTOM                                         */
+/* ==================================================================================== */
+/*
 @media (max-width: 1920px) {
-   html{
-      background: url(../assets/background@1x.png) center center no-repeat fixed;
-   }
+html{
+background: url(../assets/background@1x.png) center center no-repeat fixed;
+}
 }
 
 @media (min-width: 1921px){
-   html{
-      background: url(../assets/background@2x.png) center center no-repeat fixed;
-   }
+html{
+background: url(../assets/background@2x.png) center center no-repeat fixed;
+}
 }
 
 @media (min-width: 3841px){
-   html{
-      background: url(../assets/background@3x.png) center center no-repeat fixed;
-   }
-}
-
 html{
-   width: 100%;
-   height: 100%;
+background: url(../assets/background@3x.png) center center no-repeat fixed;
+}
+}
+*/
+html{
+    width: 100%;
+    height: 100%;
 
-   overflow-y: hidden;
+    overflow-y: hidden;
 
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-/* ============================== */
-/*             header             */
-/* ============================== */
+/* ==================================================================================== */
+/*                                       HEADER                                         */
+/* ==================================================================================== */
 
-/* ============================== */
-/*             heading            */
-/* ============================== */
+/* ==================================================================================== */
+/*                                       HEADING                                        */
+/* ==================================================================================== */
 
-/* ============================== */
-/*             body               */
-/* ============================== */
+/* ==================================================================================== */
+/*                                        BODY                                          */
+/* ==================================================================================== */
 
 body{
-   text-align: center;
+    text-align: center;
+    font-size: 16px;
 
-   width: 100%;
-   height: 100%;
-   min-width: 320px;
-   min-height: 450px;
+    width: 100%;
+    min-width: 320px;
+    min-height: 450px;
 }
-.areaTop{
-   text-align: center;
+.horContainer{
+    text-align: center;
 
-   margin: 0 1% 0.5% 1%;
+    margin: 0 0.5% 0.5% 0.5%;
 }
-.areaBottom{
-   text-align: center;
+.vertContainer{
+    display: inline-block;
+    vertical-align: top;
 
-   margin: 0.5% 1% 1% 1%;
+    width: 48.5%;
+    min-width: 315px;
+    /*min-height: 300px;*/
+    margin: 1% auto 1% auto;
+    padding: 1% 1% 1% 1%;
 }
-.areaLeft{
-   display: inline-block;
-   vertical-align: top;
-
-   width: 48.5%;
-   min-width: 315px;
-   /*min-height: 300px;*/
-   margin: 1% 0.5% 1% auto;
-   padding: 1% 1% 1% 1%;
-}
-.areaRight{
-   display: inline-block;
-   vertical-align: top;
-
-   width: 48.5%;
-   min-width: 315px;
-   /*min-height: 300px;*/
-   margin: 1% auto 1% 0.5%;
-   padding: 1% 1% 1% 1%;
-}
-.test{
-   margin: 0 auto 1% auto;
-   min-height: 50px;
-}
-
-/* ------------------------------ */
-/*             top                */
-/* ------------------------------ */
+/* ------------------------------------------------------------------------------------ */
+/*                                        top                                           */
+/* ------------------------------------------------------------------------------------ */
 
 /*.................top-left.................*/
 .title{
-   margin: 0 auto 1% auto;
-   width: 75%;
+    margin: 0 auto 1% auto;
+    width: 75%;
 }
 .aboutGame{
-   margin: 0 auto 1% auto;
-   min-height: 50px;
+    margin: 0 auto 1% auto;
+    padding: 0 5% 0 5%;
+    min-height: 50px;
 }
 .downloads{
-   margin: 0 auto 1% auto;
-   min-height: 100px;
+    margin: 0 auto 1% auto;
 }
 /*.................top-right.................*/
 .screenshots{
-   width: 98%;
-   height: 98%;
-   min-height: 100px;
-   margin: 1% auto 1% auto;
+    padding-top: auto;
+    width: 98%;
+    height: 98%;
+    min-height: 100px;
+    margin: 1% auto 1% auto;
 }
-/* ------------------------------ */
-/*             bottom             */
-/* ------------------------------ */
+.ssContainer{
+    position: relative;
+    width: 100%;
+}
+.screenshot{
+    position: relative;
+    width: 100%;
+}
+.ssNav{
+    position: relative;
+    width: 100%;
+}
+.ssNav > div{
+    display: inline;
+    position: relative;
+    margin: 0 20% 0 20%;
+    padding: 0 5% 0 5%;
+    width: 100%;
+    background-color: red;
+}
+/* ------------------------------------------------------------------------------------ */
+/*                                        bottom                                        */
+/* ------------------------------------------------------------------------------------ */
 
 /*.................bottom-left.................*/
 .character{
-   display: inline-block;
-   min-height: 100px;
-   width: 10%;
-   margin: 1% 5% 1% 5%;
+    display: inline-block;
+    min-height: 100px;
+    width: 10%;
+    margin: 1% 5% 1% 5%;
 }
 /*.................bottom-right.................*/
 .aboutCharacter{
-   min-height: 200px;
+
 }
-/* ------------------------------ */
-/*             footer             */
-/* ------------------------------ */
+/* ------------------------------------------------------------------------------------ */
+/*                                        footer                                        */
+/* ------------------------------------------------------------------------------------ */
 footer{
-   /*
-   position: static;
-   bottom: 0;
+    /*
+    position: static;
+    bottom: 0;
 
-   padding-top: 10%;
-   height: 15%;
-   margin: 1% auto 0 auto;
+    padding-top: 10%;
+    height: 15%;
+    margin: 1% auto 0 auto;
 
-   text-align:center;
-   overflow-y: hidden;
-   */
+    text-align:center;
+    overflow-y: hidden;
+    */
 }
 .slider{
-   display: inline-block;
-   width: 90%;
-   margin: 8% 0 0 5%;
-   border-radius: 16px 16px 0 0;
-   background-color: rgba(255, 0, 0, 0.25);
-   box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    width: 90%;
+    margin: 8% 0 0 5%;
+    border-radius: 16px 16px 0 0;
+    background-color: rgba(255, 0, 0, 0.25);
+    box-shadow: 3px 3px 5px 6px rgba(0, 0, 0, 0.25);
 
-   -webkit-animation:   slideIn 0.25s ease-out normal 1 forwards;
-   -moz-animation:      slideIn 0.25s ease-out normal 1 forwards;
-   -o-animation:        slideIn 0.25s ease-out normal 1 forwards;
-   animation:           slideIn 0.25s ease-out normal 1 forwards;
+    -webkit-animation:   slideIn 0.25s ease-out normal 1 forwards;
+    -moz-animation:      slideIn 0.25s ease-out normal 1 forwards;
+    -o-animation:        slideIn 0.25s ease-out normal 1 forwards;
+    animation:           slideIn 0.25s ease-out normal 1 forwards;
 
-   /*border: 1px dashed rgb(32, 32, 32);*/
+    /*border: 1px dashed rgb(32, 32, 32);*/
 }
 .slider:hover, .slider:focus{
-   -webkit-animation:   slideOut 0.25s ease-out normal 1 forwards;
-   -moz-animation:      slideOut 0.25s ease-out normal 1 forwards;
-   -o-animation:        slideOut 0.25s ease-out normal 1 forwards;
-   animation:           slideOut 0.25s ease-out normal 1 forwards;
+    -webkit-animation:   slideOut 0.25s ease-out normal 1 forwards;
+    -moz-animation:      slideOut 0.25s ease-out normal 1 forwards;
+    -o-animation:        slideOut 0.25s ease-out normal 1 forwards;
+    animation:           slideOut 0.25s ease-out normal 1 forwards;
 }
 .slider:hover img.slide, .slider:focus img.slide{
-   -webkit-animation:   pointDown 0.25s ease-out normal 1 forwards;
-   -moz-animation:      pointDown 0.25s ease-out normal 1 forwards;
-   -o-animation:        pointDown 0.25s ease-out normal 1 forwards;
-   animation:           pointDown 0.25s ease-out normal 1 forwards;
+    -webkit-animation:   pointDown 0.25s ease-out normal 1 forwards;
+    -moz-animation:      pointDown 0.25s ease-out normal 1 forwards;
+    -o-animation:        pointDown 0.25s ease-out normal 1 forwards;
+    animation:           pointDown 0.25s ease-out normal 1 forwards;
 }
 .contact{
-   color: rgba(0, 0, 0, 1);
-   font-size: 2vw;
-   display: inline-block;
-   text-align: center;
-   vertical-align: top;
-   padding-top: 1%;
-   padding-bottom: 5%;
-   width: 30%;
+    color: rgba(0, 0, 0, 1);
+    font-size: 2vw;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    padding-top: 1%;
+    padding-bottom: 5%;
+    width: 30%;
 
-   /*border: 1px dashed rgb(32, 32, 32);*/
+    /*border: 1px dashed rgb(32, 32, 32);*/
 }
 img.slide{
-   width: 10%;
-   opacity: 0.5;
+    width: 10%;
+    opacity: 0.5;
 
-   -webkit-animation:   pointUp 0.25s ease-out normal 1 forwards;
-   -moz-animation:      pointUp 0.25s ease-out normal 1 forwards;
-   -o-animation:        pointUp 0.25s ease-out normal 1 forwards;
-   animation:           pointUp 0.25s ease-out normal 1 forwards;
+    -webkit-animation:   pointUp 0.25s ease-out normal 1 forwards;
+    -moz-animation:      pointUp 0.25s ease-out normal 1 forwards;
+    -o-animation:        pointUp 0.25s ease-out normal 1 forwards;
+    animation:           pointUp 0.25s ease-out normal 1 forwards;
 }
 img.icon{
-   width: 10%;
-   padding: 5% 5% 5% 5%;
-   opacity: 0.5;
+    width: 10%;
+    padding: 5% 5% 5% 5%;
+    opacity: 0.5;
 }
 img.icon:hover{
-   opacity: 1;
+    opacity: 1;
 }
-/* ============================== */
-/*           animations           */
-/* ============================== */
+/* ==================================================================================== */
+/*                                     ANIMATIONS                                       */
+/* ==================================================================================== */
 @keyframes slideIn{
-   0%{
-      transform: translateY(-30%);
-   }
-   100%{
-      transform: translateY(0);
-   }
+    0%{
+        transform: translateY(-30%);
+    }
+    100%{
+        transform: translateY(0);
+    }
 }
 @keyframes slideOut{
-   0%{
-      transform: translateY(0);
-   }
-   100%{
-      transform: translateY(-30%);
-   }
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-30%);
+    }
 }
 @keyframes pointUp {
-   0%{
-      transform: rotate(-180deg);
-   }
-   100%{
-      transform: rotate(0);
-   }
+    0%{
+        transform: rotate(-180deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
 }
 @keyframes pointDown {
-   0%{
-      transform: rotate(0);
-   }
-   100%{
-      transform: rotate(-180deg);
-   }
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(-180deg);
+    }
 }
