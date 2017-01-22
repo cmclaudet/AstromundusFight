@@ -179,6 +179,7 @@ body{
 }
 /*.................top-right.................*/
 .screenshots{
+    position: relative;
     padding-top: auto;
     width: 98%;
     height: 98%;
@@ -187,24 +188,54 @@ body{
 }
 .ssContainer{
     position: relative;
+    overflow: hidden;
     width: 100%;
 }
 .screenshot{
-    position: relative;
+    display: none;
     width: 100%;
+    left: 0;
 }
-.ssNav{
-    position: relative;
+#ss02{
+    display: block;
+}
+.navContainer1{
+    position: absolute;
     width: 100%;
+    top: 50%;
+    left: 0;
 }
-.ssNav > div{
-    display: inline;
-    position: relative;
-    margin: 0 20% 0 20%;
-    padding: 0 5% 0 5%;
-    width: 100%;
-    background-color: red;
+.navButtonL{ float: left; }
+.navButtonR{ float: right; }
+
+.navContainer1 > img{
+    width: 10%;
+    opacity: 0.75;
+    margin: 0 1% 0 1%;
 }
+.navContainer1 > img:hover{ opacity: 1; }
+
+.navContainer2{ width: 100%; }
+
+.ssDot{
+    display: inline-block;
+    width: 3vw;
+    height: 3vw;
+    margin: 0 1% 0 1%;
+    border: 0.5vw solid white;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+#ssDot02{ background-color: white; }
+@media (min-width: 640px){
+    .navContainer2 > div{
+        width: 2vw;
+        height: 2vw;
+        border: 0.25vw solid white;
+    }
+}
+.navContainer2 > div:hover{ background-color: white; }
+
 /* ------------------------------------------------------------------------------------ */
 /*                                        bottom                                        */
 /* ------------------------------------------------------------------------------------ */
