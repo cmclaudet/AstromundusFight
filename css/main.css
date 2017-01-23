@@ -32,7 +32,7 @@ h1{
     color: rgb(255, 235, 40);
 }
 h2{
-    font-size: 1.5em;
+    font-size: 0.8em;
     color: rgb(255, 235, 40);
 }
 p{
@@ -75,19 +75,19 @@ p{
 }
 @media (min-width: 900px){
     h1{font-size: 2em;}
-    h2{font-size: 1.5em;}
+    h2{font-size: 1em;}
     p{font-size: 1em;}
     .buttonContent{font-size: 1em;}
 }
 @media (min-width: 1200px){
     h1{font-size: 4em;}
-    h2{font-size: 3em;}
+    h2{font-size: 1.8em;}
     p{font-size: 2em;}
     .buttonContent{font-size: 1.5em;}
 }
 @media (min-width: 1600px){
     h1{font-size: 6em;}
-    h2{font-size: 4.5em;}
+    h2{font-size: 2.5em;}
     p{font-size: 3em;}
     .buttonContent{font-size: 2em;}
 }
@@ -153,6 +153,7 @@ body{
 .vertContainer{
     display: inline-block;
     vertical-align: top;
+    overflow-x: hidden;
 
     width: 48.5%;
     min-width: 315px;
@@ -210,7 +211,7 @@ body{
 
 .navContainer1 > img{
     width: 10%;
-    opacity: 0.75;
+    opacity: 0.5;
     margin: 0 1% 0 1%;
 }
 .navContainer1 > img:hover{ opacity: 1; }
@@ -241,12 +242,41 @@ body{
 /* ------------------------------------------------------------------------------------ */
 
 /*.................bottom-left.................*/
-.character{
+.charContainer{
+    position: relative;
     display: inline-block;
-    min-height: 100px;
-    width: 10%;
-    margin: 1% 5% 1% 5%;
+    overflow-x: hidden;
+    width: 24%;
 }
+.character{
+    position: relative;
+    overflow-x: visible;
+    width: 100%;
+    padding-top: 120%;
+}
+.character:hover{ animation: walk 0.7s steps(6) infinite; }
+.character:active{ animation: attack 0.2s steps(2) forwards; }
+#spriteCat{
+    background: url("../assets/spriteCat.png") left center;
+    background-size: auto 100%;
+    background-position: 73.5%;
+}
+#spriteLuis{
+    background: url("../assets/spriteLuis.png") left center;
+    background-size: auto 100%;
+    background-position: 73.5%;
+}
+#spriteLaurence{
+    background: url("../assets/spriteLaurence.png") left center;
+    background-size: auto 100%;
+    background-position: 73.5%;
+}
+#spriteTadeja{
+    background: url("../assets/spriteTadeja.png") left center;
+    background-size: auto 100%;
+    background-position: 73.5%;
+}
+
 /*.................bottom-right.................*/
 .aboutCharacter{
 
@@ -326,35 +356,28 @@ img.icon:hover{
 /* ==================================================================================== */
 /*                                     ANIMATIONS                                       */
 /* ==================================================================================== */
+@keyframes walk{
+    0% { background-position: 0; }
+    100% { background-position: 73.5%; }
+}
+@keyframes attack{
+    0% { background-position: 73.5%; }
+    100% { background-position: 98%; }
+}
+
 @keyframes slideIn{
-    0%{
-        transform: translateY(-30%);
-    }
-    100%{
-        transform: translateY(0);
-    }
+    0%{ transform: translateY(-30%); }
+    100%{ transform: translateY(0); }
 }
 @keyframes slideOut{
-    0%{
-        transform: translateY(0);
-    }
-    100%{
-        transform: translateY(-30%);
-    }
+    0%{ transform: translateY(0); }
+    100%{ transform: translateY(-30%); }
 }
 @keyframes pointUp {
-    0%{
-        transform: rotate(-180deg);
-    }
-    100%{
-        transform: rotate(0);
-    }
+    0%{ transform: rotate(-180deg); }
+    100%{ transform: rotate(0); }
 }
 @keyframes pointDown {
-    0%{
-        transform: rotate(0);
-    }
-    100%{
-        transform: rotate(-180deg);
-    }
+    0%{ transform: rotate(0); }
+    100%{ transform: rotate(-180deg); }
 }
