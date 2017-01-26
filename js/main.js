@@ -41,13 +41,49 @@ function changeScreenshot(num){
 function changeBg(num){
     let elements = document.getElementsByClassName("ssDot");
 
-    for (let i=0; i < elements.length; i++){
+    for (let i = 0; i < elements.length; i++){
         let element = elements[i];
         element.style.backgroundColor = "transparent";
     }
 
     element = document.getElementById(`ssDot0${num}`);
     element.style.backgroundColor = "white";
+}
+
+function listener_characterHover(element){
+    for(let i = 0; i < characters.length; i++){ characters[i].classList.remove("character_walk"); }
+    element.target.classList.add("character_walk");
+
+    elements = document.getElementsByClassName("aboutCharacter");
+    for(let i = 0; i < elements.length; i++){ elements[i].style.display = "none"; }
+    if(element.target.id === "spriteCat"){ document.getElementById("aboutCat").style.display = "block"; }
+    if(element.target.id === "spriteLuis"){ document.getElementById("aboutLuis").style.display = "block"; }
+    if(element.target.id === "spriteLaurence"){ document.getElementById("aboutLaurence").style.display = "block"; }
+    if(element.target.id === "spriteTadeja"){ document.getElementById("aboutTadeja").style.display = "block"; }
+
+    console.log(`Hovered over ${element.target.id}`);
+}
+function listener_characterClick(element){
+    for(let i = 0; i < characters.length; i++){
+        characters[i].classList.remove("character_attack");
+        characters[i].classList.remove("character_walk");
+    }
+    element.target.classList.add("character_attack");
+
+    elements = document.getElementsByClassName("aboutCharacter");
+    for(let i = 0; i < elements.length; i++){ elements[i].style.display = "none"; }
+    if(element.target.id === "spriteCat"){ document.getElementById("aboutCat").style.display = "block"; }
+    if(element.target.id === "spriteLuis"){ document.getElementById("aboutLuis").style.display = "block"; }
+    if(element.target.id === "spriteLaurence"){ document.getElementById("aboutLaurence").style.display = "block"; }
+    if(element.target.id === "spriteTadeja"){ document.getElementById("aboutTadeja").style.display = "block"; }
+
+    console.log(`Clicked on ${element.target.id}`);
+}
+function listener_characterAnimationend(element){
+    element.target.classList.remove("character_attack");
+    element.target.classList.add("character_walk");
+
+    console.log(`${element.target.id}'s animation has ended.`);
 }
 
 // ======================================================================================
@@ -63,6 +99,13 @@ navButtonL.addEventListener("click", listener_prevScreenshot, false);
 let navContainer2 = document.getElementsByClassName("navContainer2")[0];
 navContainer2.addEventListener("click", listener_specScreenshot, false);
 
+let characters = document.getElementsByClassName("character");
+for(let i = 0; i < characters.length; i++) {
+    characters[i].addEventListener("mouseover", listener_characterHover, false);
+    characters[i].addEventListener("click", listener_characterClick, false);
+
+    characters[i].addEventListener("animationend", listener_characterAnimationend, false);
+}
 
 
 
