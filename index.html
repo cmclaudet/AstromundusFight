@@ -8,32 +8,24 @@
 </head>
 <body>
     <div class="horContainer">
+        <img src="assets/logo.png" alt="AstromundusFight">
+    </div>
+    <div class="horContainer">
         <div class="vertContainer">
-            <img src="assets/logo.png" alt="AstromundusFight" class="title">
             <div class="aboutGame">
                 <h1>About</h1>
                 <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
             </div>
             <div class="downloads">
                 <h1>Downloads</h1>
-                <a href="#" class="button">
-                    <p class="buttonContent">
-                        PC
-                    </p>
-                </a>
-                <a href="#" class="button">
-                    <p class="buttonContent">
-                        Mac
-                    </p>
-                </a>
-                <a href="#" class="button">
-                    <p class="buttonContent">
-                        Source
-                    </p>
-                </a>
+                <div class="buttonContainer">
+                    <button type="button" name="button" class="downloadButton"><a href="#">PC</a></button>
+                    <button type="button" name="button" class="downloadButton"><a href="#">Mac</a></button>
+                    <button type="button" name="button" class="downloadButton"><a href="#">Source</a></button>
+                </div>
             </div>
         </div>
-        <div class="vertContainer">
+        <div class="vertContainer" id="screenshotsDiv">
             <div class="screenshots">
                 <h1>Screenshots</h1>
                 <div class="ssContainer">
@@ -60,41 +52,39 @@
     <div class="horContainer">
         <div class="vertContainer" id="charsDiv">
             <h1>Characters</h1>
-            <div class="charContainer">
-                <button type="button" class="character" id="spriteCat"></button>
-                <h2>Cat</h2>
-            </div>
-            <div class="charContainer">
-                <button type="button" class="character" id="spriteLuis"></button>
-                <h2>Luis</h2>
-            </div>
-            <div class="charContainer">
-                <button type="button" class="character" id="spriteLaurence"></button>
-                <h2>Laurence</h2>
-            </div>
-            <div class="charContainer">
-                <button type="button" class="character" id="spriteTadeja"></button>
-                <h2>Tadeja</h2>
+            <div class="charactersContainer">
+                <div class="charContainer">
+                    <button type="button" class="character" id="spriteCat"></button>
+                    <h2>Cat</h2>
+                </div>
+                <div class="charContainer">
+                    <button type="button" class="character" id="spriteLuis"></button>
+                    <h2>Luis</h2>
+                </div>
+                <div class="charContainer">
+                    <button type="button" class="character" id="spriteLaurence"></button>
+                    <h2>Laurence</h2>
+                </div>
+                <div class="charContainer">
+                    <button type="button" class="character" id="spriteTadeja"></button>
+                    <h2>Tadeja</h2>
+                </div>
             </div>
         </div>
         <div class="vertContainer">
             <div class="aboutCharacter">
-                <h2>Mouseover or tap on any character.</h2>
+                <p>Mouseover or tap on any character.</p>
             </div>
             <div class="aboutCharacter" id="aboutCat">
-                <h2>Cat</h2>
                 <p>The most versatile and reliable fighter, Cat can take on anyone, anytime, anywhere. Need range? She has it. Damage? Absolutely. Speed? This as well. Although few weaknesses may mean few strengths, she is the only fighter who is able to ignore damage entirely - She just needs a few drinks to properly drown it out...</p>
             </div>
             <div class="aboutCharacter" id="aboutLuis">
-                <h2>Luis</h2>
                 <p>Known for his agility and dexterity, Luis is the most popular fighter among fans who want to beat their enemy with pure speed! Be wary of his kick, Luis has spent many of his years mastering Taekwondo, and his battle skills certainly show it. Don’t be fooled by his laziness… To Luis, napping is the best way to “power up”, even in the middle of a fight!</p>
             </div>
             <div class="aboutCharacter" id="aboutLaurence">
-                <h2>Laurence</h2>
                 <p>This big guy will scare anyone rearing up for battle. Laurence is intimidating, brutal, and most of all, a massive tank. Hit after hit, you’ll still be dealing with this guy where others would have been long gone! Grab a mobile fighter who you can out maneuver Laurence, and maybe the fight will be yours. Just be careful you don’t let him get his hands on any cheese.</p>
             </div>
             <div class="aboutCharacter", id="aboutTadeja">
-                <h2>Tadeja</h2>
                 <p>She’s determined and dead set on victory; Tadeja absolutely refuses to lose. Although she might not have the farthest reach of the group, her sheer strength is matched by none. Make sure you give it your all to dodge everything you can. Oh, and resist temptation - Tadeja is known to distract enemies with the sweet baked goods she makes!</p>
             </div>
         </div>
