@@ -86,6 +86,27 @@ function listener_characterAnimationend(element){
     // console.log(`${element.target.id}'s animation has ended.`);
 }
 
+function listener_slide(){
+    let slider = document.getElementsByClassName("slider")[0];
+
+    // console.log(`Old Class: ${slider.classList[1]}`)
+    if(slider.classList[1] === "slider_in"){
+        slider.classList.remove("slider_in");
+        slider.classList.add("slider_out");
+
+        sliderButton.classList.remove("sliderButton_facingUp");
+        sliderButton.classList.add("sliderButton_facingDown");
+    }
+    else if(slider.classList[1] === "slider_out"){
+        slider.classList.remove("slider_out");
+        slider.classList.add("slider_in");
+
+        sliderButton.classList.remove("sliderButton_facingDown");
+        sliderButton.classList.add("sliderButton_facingUp");
+    }
+    // console.log(`New Class: ${slider.classList[1]}`)
+}
+
 // ======================================================================================
 //                                      LISTENERS
 // ======================================================================================
@@ -106,3 +127,6 @@ for(let i = 0; i < characters.length; i++) {
 
     characters[i].addEventListener("animationend", listener_characterAnimationend, false);
 }
+
+let sliderButton = document.getElementsByClassName("sliderButton")[0];
+sliderButton.addEventListener("click", listener_slide, false);

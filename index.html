@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Fresca|Press+Start+2P" rel="stylesheet">
     <meta charset="utf-8">
     <title>AstromundusFight</title>
 </head>
@@ -10,8 +11,8 @@
     <div class="horContainer">
         <img src="assets/logo.png" alt="AstromundusFight">
     </div>
-    <div class="horContainer">
-        <div class="vertContainer">
+    <div class="horContainer" id="horContainer1">
+        <div class="vertContainer" id="vertContainer1">
             <div class="aboutGame">
                 <h1>About</h1>
                 <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
@@ -25,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="vertContainer" id="screenshotsDiv">
+        <div class="vertContainer" id="vertContainer2">
             <div class="screenshots">
                 <h1>Screenshots</h1>
                 <div class="ssContainer">
@@ -49,8 +50,8 @@
             </div>
         </div>
     </div>
-    <div class="horContainer">
-        <div class="vertContainer" id="charsDiv">
+    <div class="horContainer" id="horContainer2">
+        <div class="vertContainer" id="vertContainer3">
             <h1>Characters</h1>
             <div class="charactersContainer">
                 <div class="charContainer">
@@ -71,7 +72,7 @@
                 </div>
             </div>
         </div>
-        <div class="vertContainer">
+        <div class="vertContainer" id="vertContainer4">
             <div class="aboutCharacter">
                 <p>Mouseover or tap on any character.</p>
             </div>
@@ -90,7 +91,29 @@
         </div>
     </div>
     <footer>
-        Footer
+        <div class="slider slider_in">
+            <div class="slider_horContainer">
+                <div class="slider_vertContainer">
+                    <p>Game by cmclaudet</p>
+                </div>
+                <img src="assets/slideUp.svg" alt="Creator's Information" class="sliderButton sliderButton_facingUp">
+                <div class="slider_vertContainer">
+                    <p>Webpage by lfbusta</p>
+                </div>
+            </div>
+            <div class="slider_horContainer">
+                <div class="slider_vertContainer">
+                    <a href="https://www.linkedin.com/in/catherine-claudet-63507ab0?trk=hp-identity-name" target="_blank"><img src="assets/logoLinkedin.svg" alt=""></a>
+                    <a href="https://github.com/cmclaudet" target="_blank"><img src="assets/logoGithub.svg" alt=""></a>
+                </div>
+                <div class="slider_vertContainer">
+                </div>
+                <div class="slider_vertContainer">
+                    <a href="https://www.linkedin.com/in/luis-busta-42b621121?trk=hp-identity-name" target="_blank"><img src="assets/logoLinkedin.svg" alt=""></a>
+                    <a href="https://github.com/lfbusta" target="_blank"><img src="assets/logoGithub.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
     </footer>
     <script src=js/main.js></script>
 </body>
