@@ -51,6 +51,11 @@ p{
     text-align: justify;
     line-height: 2;
 }
+p > a{
+   text-decoration: none;
+   color: rgb(176, 225, 250);
+   text-shadow: 0 0.5vw 0 rgb(234, 49, 110);
+}
 .buttonContainer{
     display: flex;
     justify-content: center;
@@ -60,15 +65,15 @@ p{
     height: 16vw;
     margin: 1vw 1vw 1vw 1vw;
 
+    font-size: 2vw;
+    text-decoration: none;
+
     outline: none;
     background-color: rgb(255, 0, 0);
     border: 0.8vw solid rgb(255, 0, 0);
     border-radius: 4vw;
 }
-.downloadButton>a{
-    font-size: 2vw;
-    text-decoration: none;
-}
+
 .downloadButton:hover{ border-color: rgb(255, 255, 255); }
 
 /* ==================================================================================== */
@@ -353,16 +358,20 @@ footer{
     p{
         font-size: 1.2vw;
     }
+    p > a{
+       text-decoration: none;
+       color: rgb(176, 225, 250);
+       text-shadow: 0 0.2vw 0 rgb(234, 49, 110)
+    }
     .downloadButton{
         width: 8vw;
         height: 8vw;
         margin: 1vw 1vw 1vw 1vw;
 
+        font-size: 1vw;
+
         border: 0.4vw solid rgb(255, 0, 0);
         border-radius: 2vw;
-    }
-    .downloadButton>a{
-        font-size: 1vw;
     }
     .horContainer{
         flex-direction: row;
