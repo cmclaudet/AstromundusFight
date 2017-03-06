@@ -7,34 +7,6 @@ Place repository in folder AMfight.love
 
 Run with command: love AMfight.love
 
-/// CONTROLS ///
+OR: Download for Windows or OSX in build branch.
 
-Player 1
-
-LEFT: a
-
-RIGHT: d
-
-UP: w
-
-DOWN: s
-
-BASIC ATTACK: e
-
-CANCEL: q
-
-Player 2
-
-LEFT: l
-
-RIGHT: j
-
-UP: i
-
-DOWN: k
-
-BASIC ATTACK: u
-
-CANCEL: o
-
-QUIT: Esc
+https://cmclaudet.github.io/AstromundusFight/
